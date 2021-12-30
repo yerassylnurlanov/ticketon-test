@@ -1,0 +1,12 @@
+export const SET_FIRSTNAME = 'SET_FIRSTNAME';
+export const SET_LASTNAME = 'SET_LASTNAME';
+export const SET_MOBILE_PHONE = 'SET_MOBILE_PHONE';
+export const SET_EMAIL = 'SET_EMAIL';
+export const SET_BIRTHDAY = 'SET_BIRTHDAY';
+export const SET_GENDER = 'SET_GENDER';
+export const SET_COUNTRY = 'SET_COUNTRY';
+export const SET_CITY = 'SET_CITY';
+export const SET_ABOUT = 'SET_ABOUT';
+export const SET_LII = 'SET_LII';
+export const SET_ACHIEVEMENTS = 'SET_ACHIEVEMENTS';
+export const SET_PROFILE = 'SET_PROFILE';

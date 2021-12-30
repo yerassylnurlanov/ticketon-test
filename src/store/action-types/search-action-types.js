@@ -1,0 +1,3 @@
+export const SEARCH_REQUESTED = 'SEARCH_REQUESTED';
+export const SEARCH_LOADED = 'SEARCH_LOADED';
+export const SEARCH_ERROR = 'SEARCH_ERROR';

@@ -1,0 +1,2 @@
+export const HOME_SCREEN = 'HOME_SCREEN';
+export const SCREEN_HOME_MAIN_STACK = 'SCREEN_HOME_MAIN_STACK';
