@@ -1,8 +1,10 @@
 import React from 'react';
 import ErrorBoundary from './src/components/error-boundary';
+import { Provider } from 'react-redux';
 import store from './src/store';
 import { StatusBar, AppState } from 'react-native';
 import { ThemeContext, themes } from './src/components/theme-context';
+import { PushContext } from './src/utils/push-context';
 import ErrorComponent from './src/components/error-component';
 import OfflineNotice from './src/components/offline-notice/offline-notice';
 import { Navigation } from './src/navigators';
@@ -55,22 +57,21 @@ class App extends React.Component {
     return(
       <ErrorBoundary>
         <Provider store={store}>
-        <ThemeContext.Provider
+        {/* <ThemeContext.Provider
               value={{ theme, toggleTheme: this.toggleTheme }}
-            >
+            > */}
               <PushContext.Provider
                 value={{ isPush, togglePush: this.togglePush }}
               >
-                <StatusBar
-                  backgroundColor={theme.headerBarBackground}
-                  barStyle="light-content"
-                />
-                <OfflineNotice />
-                <AppContainer>
-                  <Navigation/>
-                </AppContainer>  
+                 <Navigation>
+                  <StatusBar
+                    backgroundColor={theme.headerBarBackground}
+                    barStyle="light-content"
+                  />
+                  <OfflineNotice />
+                 </Navigation>
               </PushContext.Provider>
-        </ThemeContext.Provider>
+        {/* </ThemeContext.Provider> */}
         </Provider>
       </ErrorBoundary>
      

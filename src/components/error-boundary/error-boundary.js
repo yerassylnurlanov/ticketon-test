@@ -3,7 +3,6 @@ import {
   View,
   Text
 } from 'react-native';
-import firebase from "react-native-firebase";
 
 class ErrorBoundary extends React.Component {
   state = {
@@ -21,11 +20,11 @@ class ErrorBoundary extends React.Component {
     };
   }
 
-  componentDidCatch(error, info) {
-    // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-    firebase.crashlytics().log(error);
-    firebase.crashlytics().recordError(1, info);
-  }
+  // componentDidCatch(error, info) {
+  //   // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
+  //   firebase.crashlytics().log(error);
+  //   firebase.crashlytics().recordError(1, info);
+  // }
 
   render() {
     if (this.state.hasError) {

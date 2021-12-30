@@ -15,7 +15,6 @@ import {
 import AuthService from '../../services/auth-service';
 import { setLastName, setFirstName, setEmail as setEmailProfile, setMobilePhone, setAchievements } from './profile-actions';
 import AsyncStorageService from '../../services/async-storage-service';
-import firebase from "react-native-firebase";
 import OneSignal from 'react-native-onesignal';
 
 export const setEmail = (email) => (dispatch) => {
@@ -111,7 +110,7 @@ export const signIn = (email, password) => (dispatch) => {
           dispatch(setLastName(response.data.lastName));
           dispatch(setEmailProfile(response.data.email));
           dispatch(getProfileLoaded(response.data));
-          firebase.analytics().logEvent("login", { method: "email" });
+          // firebase.analytics().logEvent("login", { method: "email" });
         })
         .catch((err) => {
           dispatch(getProfileError(err.message));
@@ -135,7 +134,7 @@ export const signInFb = (token) => {
         dispatch(setEmailProfile(response.data.email));
         dispatch(setAchievements(response.data.achievements));
         dispatch(getProfileLoaded(response.data));
-        firebase.analytics().logEvent("login", { method: "facebook" });
+        // firebase.analytics().logEvent("login", { method: "facebook" });
       })
       .catch((err) => {
         dispatch(getProfileError(err.message));

@@ -8,7 +8,7 @@ import {
   SET_LANGUAGE,
   SET_THEME
 } from '../action-types';
-import {} from '@react-native-community/async-storage';
+import {} from '@react-native-async-storage/async-storage';
 
 
 const initialState = {
