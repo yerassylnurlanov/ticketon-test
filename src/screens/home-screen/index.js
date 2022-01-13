@@ -1,2 +1,3 @@
-export { HomeScreen } from "./home-container";
+import HomeScreen from './home-screen';
 
+export default HomeScreen

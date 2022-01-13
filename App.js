@@ -8,7 +8,7 @@ import { PushContext } from './src/utils/push-context';
 import ErrorComponent from './src/components/error-component';
 import OfflineNotice from './src/components/offline-notice/offline-notice';
 import { Navigation } from './src/navigators';
-
+import 'react-native-gesture-handler';
 
 
 class App extends React.Component {
@@ -45,6 +45,7 @@ class App extends React.Component {
     }
     return route.routeName;
   };
+  
 
   render (){
     const { theme, isConnected, isPush } = this.state;
@@ -53,7 +54,7 @@ class App extends React.Component {
     if (!isConnected) {
       return <ErrorComponent errorText={'connectToInternet'} />
     }
-
+   
     return(
       <ErrorBoundary>
         <Provider store={store}>
@@ -63,13 +64,13 @@ class App extends React.Component {
               <PushContext.Provider
                 value={{ isPush, togglePush: this.togglePush }}
               >
-                 <Navigation>
-                  <StatusBar
+                <StatusBar
                     backgroundColor={theme.headerBarBackground}
                     barStyle="light-content"
                   />
                   <OfflineNotice />
-                 </Navigation>
+                 <Navigation/>
+                  
               </PushContext.Provider>
         {/* </ThemeContext.Provider> */}
         </Provider>
@@ -78,5 +79,7 @@ class App extends React.Component {
     )
     }
 }
+
+
 
 export default App;

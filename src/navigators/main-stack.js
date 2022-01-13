@@ -1,8 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "../screens/home-screen/home-container";
+import HomeScreen  from "../screens/home-screen";
 import { SCREEN_HOME_MAIN_STACK,HOME_SCREEN } from "./screen-constants";
-import { NavigationContainer } from "@react-navigation/native";
 
 const MainStack = createStackNavigator();
 
@@ -12,19 +11,17 @@ const mainStackOptions = {
     animationEnabled:false
 }
 
-export const MainStackNavigator = ()=>(
-    <NavigationContainer independent={true}>
-        <MainStack.Navigator
-            screenOptions={mainStackOptions}
-            initialRouteName={SCREEN_HOME_MAIN_STACK}
-        >
-            <MainStack.Screen
-                name={SCREEN_HOME_MAIN_STACK}
-                component={HomeStackNavigator}
-            />
-
-        </MainStack.Navigator>
-    </NavigationContainer>
+export const MainStackNavigator = () => (
+    <MainStack.Navigator
+        screenOptions={mainStackOptions}
+        initialRouteName={SCREEN_HOME_MAIN_STACK}
+    >
+        <MainStack.Screen
+            name={SCREEN_HOME_MAIN_STACK}
+            component={HomeStackNavigator}
+        />
+    </MainStack.Navigator>
+    
 )
 
 const HomeStack = createStackNavigator();
